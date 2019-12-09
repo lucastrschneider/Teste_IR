@@ -131,7 +131,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim) {
 
             case IR_RECEIVER_ADAPTER_WAIT_READING:
 
-                if (tsop48_handler_read_bit(&m_dev) >= 11) {
+                if (tsop48_handler_read_bit(&m_dev) >= 12) {
                     HAL_TIM_Base_Stop_IT(m_dev.htim);
                     __HAL_TIM_SET_AUTORELOAD(m_dev.htim, 10000);
                     __HAL_TIM_SET_COUNTER(m_dev.htim, 0);

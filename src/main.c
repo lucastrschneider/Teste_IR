@@ -24,7 +24,7 @@ int main(void) {
     ir_receiver_adapter_init();
 
     for (;;) {
-        if (ir_receiver_process()) {
+        if (ir_receiver_process() == IR_RECEIVER_ADAPTER_DATA_READY) {
             data = ir_receiver_get_data();
         }
     }

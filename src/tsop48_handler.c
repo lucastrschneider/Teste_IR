@@ -28,7 +28,7 @@ void tsop48_handler_reset_flag(tsop48_handler_t* p_tsop48) {
 }
 
 uint8_t tsop48_handler_read_bit(tsop48_handler_t* p_tsop48) {
-    if (HAL_GPIO_ReadPin(p_tsop48->gpio.port, p_tsop48->gpio.pin) == GPIO_PIN_SET) {
+    if (HAL_GPIO_ReadPin(p_tsop48->gpio.port, p_tsop48->gpio.pin) == GPIO_PIN_RESET) {
         p_tsop48->aux_data |= 1 << p_tsop48->bit_counter;
     }
 
